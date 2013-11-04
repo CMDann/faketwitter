@@ -10,10 +10,13 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Twitter.new(params[:body])
+    @tweet = Twitter.new(params[:twitter])
 
-    redirect_to :action => :index
-
+    if (@tweet.save)
+      redirect_to :action => :index
+    else
+      @tweets = Twitter.order('id DESC')
+      render :action => :index
+    end
   end
-
 end
