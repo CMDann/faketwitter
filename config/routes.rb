@@ -1,4 +1,7 @@
 Faketwitter::Application.routes.draw do
+  
+  root :to => 'tweets#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
