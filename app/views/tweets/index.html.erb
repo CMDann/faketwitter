@@ -1,2 +1,5 @@
 <h1>Index</h1>
 <p>Here is some text</p>
+<% @tweets.each do |tweet| %>
+	<p><%= tweet.body %></p>
+<% end %>
