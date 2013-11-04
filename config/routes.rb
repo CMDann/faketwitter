@@ -2,6 +2,9 @@ Faketwitter::Application.routes.draw do
   
   root :to => 'tweets#index'
 
+  match 'tweets' => 'tweets#index', :as => 'tweets', :via => :get
+  match 'tweets' => 'tweets#create', :as => 'twitters', :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

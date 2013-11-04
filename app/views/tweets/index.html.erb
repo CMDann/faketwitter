@@ -1,5 +1,17 @@
-<h1>Index</h1>
-<p>Here is some text</p>
+<h1>Twitter</h1>
+<%= form_for @tweet do |f| %>
+	<% if @tweet.errors.any? %>
+		<p>A Tweet must be between 1 and 140 characters</p>
+	<% end %>
+
+	<div>
+		<%= f.text_field :body %>
+		<%= f.submit "Tweet!" %>
+	</div>
+
+<% end %>
+
+<!-- Display all tweets -->
 <% @tweets.each do |tweet| %>
 	<p><%= tweet.body %></p>
 <% end %>
